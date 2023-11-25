@@ -1,9 +1,9 @@
 import discord
-from discrod.ext import commands
+from discord.ext import commands
 
 BotName = "Discord Bot"
 
-client = comands.Bot(command_prefix = '$')
+client = commands.Bot(command_prefix = '$', intents=discord.Intents.all())
 
 @client.event
 async def on_ready():
@@ -15,4 +15,4 @@ async def on_ready():
 async def hello(ctx):
     await ctx.send(f"Hello, I am {BotName}")
 
-client.run('{###   NEEDS TO HAVE A API KEY!!! WILL ADD TO THE HOST MACHINE   ###}')
+client.run('API KEY NOT HERE')
