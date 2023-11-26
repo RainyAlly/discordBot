@@ -39,10 +39,10 @@ def OverVersion(Commits):
 while True:
     Version = ReadVersion()
     while Commits == Version:
-        time.sleep(5)
         Commits = check_any_commit(RepoOwner, RepoName)
         if Commits == Version:
             print(f"{RepoName} hasn't had any new commits made.")
-        else:
+        elif type(Commits) == "int":
             print(f"A commit has been made in {RepoName}.")
             OverVersion(Commits)
+        time.sleep(2.5)
