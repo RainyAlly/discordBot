@@ -25,13 +25,13 @@ def ReadVersion():
 
 Commits = check_any_commit(RepoOwner, RepoName)
 
-def OverVersion(Version):
+def OverVersion(Commits):
     file_path = '.env'
     with open(file_path, 'r') as file:
         lines = file.readlines()
     for i, line in enumerate(lines):
         if line.startswith(f'VERSION_CONTROL='):
-            lines[i] = f'VERSION_CONTROL={Version}\n'
+            lines[i] = f'VERSION_CONTROL={Commits}\n'
             break
     with open(file_path, 'w') as file:
         file.writelines(lines)
@@ -45,4 +45,4 @@ while True:
             print(f"{RepoName} hasn't had any new commits made.")
         else:
             print(f"A commit has been made in {RepoName}.")
-            OverVersion(Version)
+            OverVersion(Commits)
