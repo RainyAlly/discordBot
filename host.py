@@ -45,4 +45,7 @@ while True:
         elif type(Commits) == "int":
             print(f"A commit has been made in {RepoName}.")
             OverVersion(Commits)
+        else:
+            print("There was a error")
+            Commits = Version
         time.sleep(2.5)
