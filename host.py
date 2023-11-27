@@ -3,6 +3,7 @@ from dotenv import load_dotenv, dotenv_values, set_key
 import os
 import time
 
+os.system('cls')
 load_dotenv()
 
 RepoOwner = "RainyAlly"
